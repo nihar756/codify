@@ -6,23 +6,20 @@ import styles from "./academyEditor.module.scss";
 import Link from "next/link";
 import { Blocks } from "lucide-react";
 import ModeSwitch from "@/src/app/(root)/_components/modeSwitch";
-
+import HeaderProfileBtn from "../(root)/_components/HeaderProfileBtn";
 export default function AcademyPage() {
- useEffect(() => {
-  let destroyFn: (() => void) | undefined;
+  useEffect(() => {
+    let destroyFn: (() => void) | undefined;
 
-  import("./academyEditor").then((m) => {
-    m.initAcademyEditor();
-    destroyFn = m.destroyAcademyEditor;
-  });
+    import("./academyEditor").then((m) => {
+      m.initAcademyEditor();
+      destroyFn = m.destroyAcademyEditor;
+    });
 
-  return () => {
-    destroyFn?.();
-  };
-}, []);
-
-
-
+    return () => {
+      destroyFn?.();
+    };
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -42,7 +39,6 @@ export default function AcademyPage() {
       />
 
       <header>
-        
         <div className="container row">
           {/* Codify Logo */}
           <Link href="/web" className="flex items-center gap-3 group relative">
@@ -67,16 +63,22 @@ export default function AcademyPage() {
               </span>
             </div>
           </Link>
-          <ModeSwitch />
-          {/* Right buttons */}
-          <div className="row">
+          <div className="row items-center gap-3 ml-auto">
+            <ModeSwitch />
+
             <button className="btn secondary" id="saveBtn">
               Save
             </button>
+
             <button className="btn secondary" id="loadBtn">
               Load
             </button>
+
             <input id="openFile" type="file" hidden />
+
+            <div className="pl-3 ml-2 border-l border-gray-800 flex items-center">
+              <HeaderProfileBtn />
+            </div>
           </div>
         </div>
       </header>
@@ -149,7 +151,6 @@ export default function AcademyPage() {
       </main>
 
       <div className="footer">© 2025 Codify</div>
-      
     </div>
   );
 }
