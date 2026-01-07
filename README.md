@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Codify — Interactive Code Editor
 
-## Getting Started
+Codify is a modern, browser-based **interactive code editor** built with **Next.js (App Router)**.  
+It provides a clean, IDE-like experience for **programming practice** and **web development**, all inside the browser.
 
-First, run the development server:
+🔗 **Live Website:**  
+👉 https://codify-btk6.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🖥️ Screenshots
+
+### 🔹 Programming Mode (`/`)
+A general-purpose programming playground with language support, themes, and execution.
+
+![Programming Mode](./public/programming.png)
+
+---
+
+### 🔹 Development Mode (`/web`)
+A full **HTML / CSS / JavaScript** editor with live preview, testing, and persistence.
+
+![Development Mode](./public/development.png)
+
+---
+
+## ✨ Features
+
+- 🧠 **Dual Mode Interface**
+  - **Programming Mode** (`/`)
+  - **Development Mode** (`/web`)
+- ✍️ **Ace Editor Integration**
+  - Syntax highlighting
+  - Keyboard shortcuts
+  - Multiple languages
+- ▶️ **Live Code Execution**
+- 🧪 **Run with Validation Tests**
+- 💾 **Save & Load Projects**
+  - LocalStorage persistence
+  - JSON export / import
+- 🎨 **Dark Theme UI**
+- 🔄 **Reliable Navigation**
+  - Hard refresh for Programming mode
+  - SPA navigation for Development mode
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Editor:** Ace Editor (CDN)
+- **Styling:** CSS Modules + Utility Classes
+- **Icons:** lucide-react
+- **State Management:** React Hooks
+- **Storage:** Browser `localStorage`
+- **Deployment:** Vercel
+
+---
+### Setup .env file
+
+```js
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+CONVEX_DEPLOYMENT=
+NEXT_PUBLIC_CONVEX_URL=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Add these env to Convex Dashboard
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```js
+CLERK_WEBHOOK_SECRET=
+LEMON_SQUEEZY_WEBHOOK_SECRET=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run the app
 
-## Learn More
+```shell
+npm run dev
+```
+---
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+CODIFY/
+├─ .next/
+├─ convex/
+├─ node_modules/
+├─ public/
+├─ src/
+│  ├─ app/
+│  │  ├─ (root)/
+│  │  │  ├─ _components/
+│  │  │  ├─ _constants/
+│  │  │  └─ page.tsx
+│  │  ├─ pricing/
+│  │  ├─ profile/
+│  │  ├─ snippets/
+│  │  ├─ web/
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  └─ layout.tsx
+│  ├─ components/
+│  ├─ hooks/
+│  ├─ store/
+│  ├─ types/
+│  └─ proxy.ts
+├─ .env.local
+├─ .gitignore
+├─ eslint.config.mjs
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
