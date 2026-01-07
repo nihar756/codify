@@ -8,6 +8,7 @@ import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
 import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
+import ModeSwitch from "./modeSwitch";
 
 async function Header() {
   const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
@@ -73,6 +74,7 @@ async function Header() {
         </div>
 
         <div className="flex items-center gap-4">
+          <ModeSwitch />
           <div className="flex items-center gap-3">
             <ThemeSelector />
             <LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
